@@ -36,24 +36,24 @@ const staggerContainer: Variants = {
 
 export default function Home() {
   return (
-    <main className="relative h-screen w-screen flex items-center justify-center animated-bg p-4 md:p-8">
+    <main className="relative min-h-screen md:h-screen w-full flex items-center justify-center animated-bg p-2 md:p-8">
       {/* Outer Border Frame */}
-      <div className="absolute inset-4 md:inset-8 portfolio-border rounded-[2.5rem] pointer-events-none z-10" />
+      <div className="absolute inset-2 md:inset-8 portfolio-border rounded-[1.5rem] md:rounded-[2.5rem] pointer-events-none z-10" />
 
       {/* Main Container Card */}
       <motion.div 
         initial="hidden"
         animate="visible"
         variants={fadeIn}
-        className="glass-card w-full max-w-6xl h-full max-h-[850px] rounded-[2rem] overflow-hidden flex flex-col md:flex-row relative z-0"
+        className="glass-card w-full max-w-6xl h-auto md:h-full max-h-none md:max-h-[850px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden flex flex-col md:flex-row relative z-0"
       >
         {/* Left Side: Profile & Basics */}
-        <div className="w-full md:w-1/3 bg-white/20 p-8 flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r border-white/30">
+        <div className="w-full md:w-1/3 bg-white/20 p-6 md:p-8 flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r border-white/30">
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="relative w-48 h-48 md:w-56 md:h-56 rounded-full p-2 bg-gradient-to-tr from-lavender-base to-pink-pastel shadow-xl mb-6"
+            className="relative w-32 h-32 md:w-56 md:h-56 rounded-full p-1.5 md:p-2 bg-gradient-to-tr from-lavender-base to-pink-pastel shadow-xl mb-4 md:mb-6"
           >
-            <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white">
+            <div className="relative w-full h-full rounded-full overflow-hidden border-2 md:border-4 border-white">
               <Image
                 src="/ahona.jpg"
                 alt="Sanjida Farha Khan Ahona"
@@ -66,13 +66,13 @@ export default function Home() {
 
           <motion.h1 
             variants={fadeIn}
-            className="text-3xl md:text-4xl font-bold text-gray-800 mb-2"
+            className="text-2xl md:text-4xl font-bold text-gray-800 mb-1"
           >
             Ahona
           </motion.h1>
           <motion.p 
             variants={fadeIn}
-            className="text-lg text-gray-600 mb-4 font-medium"
+            className="text-base md:text-lg text-gray-600 mb-4 font-medium"
           >
             Sanjida Farha Khan Ahona
           </motion.p>
@@ -101,7 +101,7 @@ export default function Home() {
         </div>
 
         {/* Right Side: Detailed Content */}
-        <div className="w-full md:w-2/3 p-8 md:p-12 overflow-y-auto scrollbar-hide flex flex-col gap-8">
+        <div className="w-full md:w-2/3 p-6 md:p-12 md:overflow-y-auto scrollbar-hide flex flex-col gap-8">
           {/* About Me Section */}
           <motion.section variants={staggerContainer} initial="hidden" animate="visible">
             <div className="flex items-center gap-2 mb-4">
